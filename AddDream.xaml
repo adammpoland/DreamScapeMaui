@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DreamScapeMAUI.AddDream"
+             Title="Add Dream"
+             BackgroundColor="BlueViolet"
+             Shell.PresentationMode="ModalAnimated">
+    <StackLayout Margin="20">
+        <Button Grid.Column="1"
+                Text="Save"
+                BackgroundColor="GhostWhite"
+                TextColor="Black"
+                WidthRequest="150"
+                Clicked="OnSaveButtonClicked" />
+        <Editor Placeholder="What did you dream?"
+                Text="{Binding NoteText}"
+                HeightRequest="100"
+                FontSize="Large"
+                TextColor="GhostWhite"
+                AutoSize="TextChanges"
+                x:Name="noteText"/>
+        <!-- Layout children in two columns -->
+        <Grid ColumnDefinitions="*,*">
+            <Button Grid.Column="0"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+
+            <Button Grid.Column="1"
+                    Text="Back"
+                    Clicked="OnBack"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
